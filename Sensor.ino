@@ -1,6 +1,6 @@
 #include <Wire.h>
 
-const int MPU_ADDR = 0x68; // MPU-6050 I2C address
+const int MPU_ADDR = 0x68; // MPU-6050 I2C address (AD0 pin is connected to GND)
 
 int16_t accelX, accelY, accelZ;
 int16_t gyroX, gyroY, gyroZ;
@@ -25,7 +25,7 @@ void loop() {
   Wire.requestFrom(MPU_ADDR, 14, true); // Request 14 bytes from MPU-6050
 
   // Read accelerometer and gyro data
-  accelX = (Wire.read() << 8 | Wire.read());
+  accelX = (Wire.read() << 8 | Wire.read()); // Combine two bytes from the MPU6050 to form the 16-bit value
   accelY = (Wire.read() << 8 | Wire.read());
   accelZ = (Wire.read() << 8 | Wire.read());
   tempRaw = (Wire.read() << 8 | Wire.read());
