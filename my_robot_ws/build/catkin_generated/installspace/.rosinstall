@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/whitestorm/my_robot_ws/install/setup.sh

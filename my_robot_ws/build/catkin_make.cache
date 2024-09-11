@@ -1,0 +1,2 @@
+miarobot_description
+-DCATKIN_DEVEL_PREFIX=/home/whitestorm/my_robot_ws/devel -DCMAKE_INSTALL_PREFIX=/home/whitestorm/my_robot_ws/install -G Unix Makefiles
